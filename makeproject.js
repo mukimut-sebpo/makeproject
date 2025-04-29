@@ -8,7 +8,8 @@ cp.exec('mkdir ' + ticketNo, (e, o, stdE) => {
         return;
     }
 
-    const command = 'cd ' + ticketNo + ' && git clone git@github.com:sebpo1/USCS_' + ticketNo + '.git';
+    const value = Number.parseInt(ticketNo);
+	const command = ticketNo < 2000? 'cd ' + ticketNo + ' && git clone git@github.com:sebpo1/APCS_' + ticketNo + '.git' : 'cd ' + ticketNo + ' && git clone git@github.com:sebpo1/USCS_' + ticketNo + '.git';
     console.log(command);
     
     cp.exec(command, (a, b, c) => {
